@@ -37,7 +37,4 @@ Refer the [PROBLEM.md](problem.md) file for problem description.
 > - The code must not be plagiarized, the mentors will randomly pick the submissions and may ask you to explain the solution
 > - The code must be properly indented, code structure maintained as per the boilerplate and properly commented
 > - Follow through the problem statement shared with you
-
-### MENTORS TO BEGIN REVIEW YOUR WORK ONLY AFTER ->
-> - You add the respective Mentor as a Reporter into your Assignment Repository
-> - Intimate your Mentor on Slack  - with your Git URL - Once you done working and is ready for final submission.
+>-  You add the respective Mentor as a Reporter into your Assignment Repository
