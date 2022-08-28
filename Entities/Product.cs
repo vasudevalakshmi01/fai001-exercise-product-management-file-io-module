@@ -10,13 +10,23 @@ namespace Entities
 
     public class Product
     {
-        /*
+        /*s
          * define properties for Product model attributes 
          */
+        public int Price { get; set; }
+        public int ProductId { get; set; }
+        public string ProductName { get; set; }
+
+        public bool InStock { get; }
 
 
         /*
          * Override ToString() method to return string equivalent of product object containing product details
          */
+        public override string ToString()
+        {
+            return $"Price: {Price},ProductId: {ProductId},ProductName: {ProductName},InStock: {InStock}";
+        }
+
     }
 }

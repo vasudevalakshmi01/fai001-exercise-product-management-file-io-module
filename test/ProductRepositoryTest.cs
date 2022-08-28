@@ -12,7 +12,12 @@ namespace test
     public class ProductRepositoryTest
     {
         readonly DataContext context;
-        readonly ProductRepository repository; 
+        readonly ProductRepository repository;
+
+        public string ProductName { get; private set; }
+        public int Price { get; set; }
+        public bool InStock { get;}
+
         public  ProductRepositoryTest()
         {
             string folder = "test";
@@ -31,7 +36,7 @@ namespace test
                 ProductId = 1001,
                 ProductName = "Titan white square dial watch for men",
                 Price = 2500,
-                InStock = true
+                InStock = true,
             };
             repository.AddProduct(product);
 
@@ -61,7 +66,9 @@ namespace test
             var result = repository.GetProduct(1001);
 
             Assert.That(result, Is.Not.Null,message:"Product Cannot be Null");
-            Assert.That(result.ProductName, Is.EqualTo("Titan white square dial watch for men"), message: "Product Name must be \'Titan white square dial watch for men\'");
+            Assert.That(result.ProductName,
+                        Is.EqualTo("Titan white square dial watch for men"),
+                        message: "Product Name must be \'Titan white square dial watch for men\'");
 
         }
         [Test, Order(3)]
@@ -70,7 +77,9 @@ namespace test
             var result = repository.GetProduct("Titan black dial watch for women");
 
             Assert.That(result, Is.Not.Null, message: "Product Cannot be Null");
-            Assert.That(result.Price, Is.EqualTo(2200), message: "Price must be 2200");
+            Assert.That(result.Price,
+                        Is.EqualTo(2200),
+                        message: "Price must be 2200");
         }
 
         [Test, Order(4)]
@@ -79,7 +88,9 @@ namespace test
             var result = repository.GetAllProducts();
 
             Assert.That(result, Is.TypeOf<List<Product>>(), message: "List<Product> should be returned");
-            Assert.That(result.Count, Is.EqualTo(2), message: "Count of products must be 2");
+            Assert.That(result.Count,
+                        Is.EqualTo(2),
+                        message: "Count of products must be 2");
         }
 
         [Test, Order(5)]
@@ -125,10 +136,7 @@ namespace test
         }
 
         [OneTimeTearDown]
-        public void DisposeFile()
-        {
-            context.CleanUp();
-        }
+        public void DisposeFile() => context.CleanUp();
 
     }
 }
