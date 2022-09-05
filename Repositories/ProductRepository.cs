@@ -9,24 +9,26 @@ namespace Repositories
     public class ProductRepository
     {
         // declare field of type DataContext
-        public string name { get; set; }
-        List<string> item = new List<string>();
+        DataContext context;
+        public object products;
 
-        public ProductRepository(string name)
+        public ProductRepository(DataContext context)
         {
             //initialize the DataContext field with parameter passed
-            this.name=name;
+            this.context = this.context;
         }
 
         /*
          * this method should accept product data and add it to the product collection
          * 
          */
-        public void AddProduct(string name)
+        public void AddProduct(Product product)
         {
             // code to add product to file, ensuring that product is not null
-            item.Add(name);
+            product.Add(products);
         }
+
+       
 
 
         /*
@@ -35,12 +37,12 @@ namespace Repositories
          * 
          * the method should return true for success and false for invalid id 
          */
-        public  bool RemoveProduct(string name)
+        public bool RemoveProduct(string name)
         {
             // code to remove product by the id provided from file as parameter
-            if (item.Contains(name))
+            if (product.Contains(name))
             {
-                item.Remove(name);
+                product.Remove(name);
                 return true;
             }
             else
@@ -49,22 +51,18 @@ namespace Repositories
             }
         }
 
-     
-
-       
-
         /*
          * this method should search and return product by product name from the file 
          * 
          * the search value should be passed as parameter
-         * asd
+         * 
          * the method should return null for non-matching product name
          */
-        public bool GetProduct(string name)
+        public object GetProduct(string v)
         {
-            if (item.Contains(name))
+            if (product.Contains(v))
             {
-               return true;
+                return true;
             }
             else
             {
@@ -80,33 +78,21 @@ namespace Repositories
          * 
          * the method should return null for non-matching product id
          */
-        /*public  bool GetProduct(string name)
+       /* public object GetProduct(int w)
         {
-            if (item.Contains(name))
-            {
-                item.Remove(name);
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+
         }
-        */
-     
-
-
+       */
+        
         /*
          * this method should return all items from the product collection
          */
-        public  void GetAllProducts(DataContext context)
+        public void GetAllProducts()
         {
-            foreach(var i in item)
+            foreach (var i in product)
             {
                 Console.WriteLine($"Remaining items are:{i}");
             }
         }
-
-        
     }
 }
