@@ -10,14 +10,14 @@ namespace Entities
 
     public class Product
     {
-        /*s
+        /*
          * define properties for Product model attributes 
          */
         public int Price { get; set; }
         public int ProductId { get; set; }
         public string ProductName { get; set; }
 
-        public bool InStock { get; }
+        public bool InStock { get; set; }
 
 
         /*
@@ -27,6 +27,5 @@ namespace Entities
         {
             return $"Price: {Price},ProductId: {ProductId},ProductName: {ProductName},InStock: {InStock}";
         }
-
     }
 }
