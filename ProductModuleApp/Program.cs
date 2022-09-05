@@ -11,7 +11,10 @@ namespace ProductModuleApp
              * code here is not mandatory but will help 
              * to understand flow better
              */
+            DataContext object1 = new DataContext();
+           
 
+            Console.WriteLine("Hello World ");
         }
     }
 }
