@@ -9,24 +9,15 @@ namespace test
     [TestFixture]
     public class ProductTest
     {
-        
         readonly Product product;
-
-        public bool InStock { get; }
-        public int Price { get; }
-        public int ProductId { get; }
-        public string ProductName { get; }
-
         public ProductTest()
         {
-            Product product = new Product();
-            //product = new Product
+            product = new Product
             {
-                Price = 2300;
-                ProductId = 1005;
-                ProductName = "Timex sports watch for men";
-                InStock = true;
-        };
+                Price = 2300,
+                ProductId = 1005,
+                ProductName = "Timex sports watch for men"
+            };
         }
 
         [Test]
